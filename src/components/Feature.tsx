@@ -97,7 +97,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                 )}
               </div>
             )}
-            <div className="mt-6">
+            {feature.benefits && (<div className="mt-6">
               <h4 
                 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-3 cursor-pointer"
                 onClick={() => setIsBenefitsExpanded(!isBenefitsExpanded)}
@@ -120,7 +120,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                   ))}
                 </ul>
               )}
-            </div>
+            </div>)}
           </div>
 
           {/* Code Preview */}

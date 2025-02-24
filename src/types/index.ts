@@ -7,7 +7,7 @@ export interface Feature {
   title: string;
   description: string;
   codeUrl: string;
-  benefits: DetailsType[];
+  benefits?: DetailsType[];
   newCode?: string;
   oldCode?: string;
   features?: DetailsType[]; 
