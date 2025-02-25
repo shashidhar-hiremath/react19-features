@@ -39,7 +39,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
               onClick={() => setIsExpanded((prev) => !prev)}
               className='ml-4 px-3 py-1 text-sm bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors'
             >
-              {isExpanded ? '←' : '→'}
+              {isExpanded ? '→' : '←'}
             </button>
           </div>
         </div>
