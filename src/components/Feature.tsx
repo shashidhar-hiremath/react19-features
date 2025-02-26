@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Feature as FeatureType } from '../types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { ArrowLeftCircleIcon, ArrowRightCircleIcon, ChevronDoubleDownIcon, ChevronDoubleUpIcon } from '@heroicons/react/16/solid';
+import ExpandCollapse from './common/ExpandCollapse';
 
 interface FeatureProps {
   feature: FeatureType;
@@ -17,30 +19,23 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
 
   return (
     <section
-      className={`${
-        !isFullscreen
-          ? 'bg-gradient-to-r from-white to-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 mb-6 overflow-hidden'
-          : ''
-      }`}
+      className={`${!isFullscreen
+        ? 'bg-gradient-to-r from-white to-gray-50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 mb-6 overflow-hidden'
+        : ''
+        }`}
     >
       <div className='p-6'>
         {/* Header */}
-        <div className='flex items-center mb-4'>
-          <h3 className='text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600'>
-            {feature.title}
-          </h3>
-          <div className='ml-auto'>
-            <span className='px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full'>
-              New Feature
-            </span>
-          </div>
-          <div>
-            <button
-              onClick={() => setIsExpanded((prev) => !prev)}
-              className='ml-4 px-3 py-1 text-sm bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors'
-            >
-              {isExpanded ? '→' : '←'}
-            </button>
+        <div className={`${isFullscreen ? 'sticky top-0 z-50 bg-white/95 pt-3 pb-3' : ''}`}>
+          <div className='flex items-center mb-4'>
+            <h3 className='text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600'>
+              {feature.title}
+            </h3>
+            <div className='ml-auto'>
+              <span className='px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full'>
+                New Feature
+              </span>
+            </div>
           </div>
         </div>
 
@@ -57,7 +52,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                     className='text-lg font-semibold text-gray-800 flex items-center gap-2 mb-3 cursor-pointer'
                     onClick={() => setIsOldCodeExpanded(!isOldCodeExpanded)}
                   >
-                    <span className=''>{isOldCodeExpanded ? '▲' : '▼'}</span>
+                    {<ExpandCollapse isExpanded={isOldCodeExpanded} />}
                     Old Code
                   </h4>
                   {isOldCodeExpanded && (
@@ -76,7 +71,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                     className='text-lg font-semibold text-gray-800 flex items-center gap-2 mb-3 cursor-pointer'
                     onClick={() => setIsNewCodeExpanded(!isNewCodeExpanded)}
                   >
-                    <span className=''>{isNewCodeExpanded ? '▲' : '▼'}</span>
+                    {<ExpandCollapse isExpanded={isNewCodeExpanded} />}
                     New Code
                   </h4>
                   {isNewCodeExpanded && (
@@ -95,7 +90,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                     className='text-lg font-semibold text-gray-800 flex items-center gap-2 mb-3 cursor-pointer'
                     onClick={() => setIsFeaturesExpanded(!isFeaturesExpanded)}
                   >
-                    <span className=''>{isFeaturesExpanded ? '▲' : '▼'}</span>
+                    {<ExpandCollapse isExpanded={isFeaturesExpanded} />}
                     <span className='text-green-500'>✓</span> Key Features
                   </h4>
                   {isFeaturesExpanded && (
@@ -124,7 +119,7 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                     className='text-lg font-semibold text-gray-800 flex items-center gap-2 mb-3 cursor-pointer'
                     onClick={() => setIsBenefitsExpanded(!isBenefitsExpanded)}
                   >
-                    <span className=''>{isBenefitsExpanded ? '▲' : '▼'}</span>
+                    {<ExpandCollapse isExpanded={isBenefitsExpanded} />}
                     <span className='text-green-500'>✓</span> Key Benefits
                   </h4>
                   {isBenefitsExpanded && (
@@ -161,7 +156,13 @@ const Feature: React.FC<FeatureProps> = ({ feature, isFullscreen }) => {
                 className='w-full h-full max-h-full rounded-lg border border-gray-200 bg-gray-50'
                 title={`Code example for ${feature.title}`}
               />
-              <div className='absolute top-2 right-2'>
+              <div className='absolute top-2 right-2 flex items-center gap-2'>
+                <button
+                  onClick={() => setIsExpanded((prev) => !prev)}
+                  className='bg-white/90 hover:bg-white px-3 py-1 rounded text-sm shadow-sm border border-gray-20 transition-colors cursor-pointer'
+                >
+                  {isExpanded ? <ArrowRightCircleIcon className='w-5 h-5' /> : <ArrowLeftCircleIcon className='w-5 h-5' />}
+                </button>
                 <a
                   target='_blank'
                   href={feature.codeUrl}
