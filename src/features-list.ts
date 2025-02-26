@@ -47,6 +47,13 @@ export const REACT19_FEATURES: Feature[] = [
     codeUrl:
       'https://codesandbox.io/p/sandbox/github/MSD118/react-19-demo?file=%2Fsrc%2FUseFormStatusDemo.tsx',
     newCode: `const { pending, data, method, action } = useFormStatus()`,
+    benefits: [
+      { description: 'Clear feedback on form status' },
+      {
+        description:
+          'Useful for a common Button component to be used with forms',
+      },
+    ],
   },
   {
     title: 'Ref as a prop',
