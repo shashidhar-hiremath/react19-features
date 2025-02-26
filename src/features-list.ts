@@ -125,7 +125,7 @@ export const REACT19_FEATURES: Feature[] = [
     description:
       "The use() hook allows React components to synchronously read the value of a resource, like a Promise or a context. When used with Promises, it enables components to suspend rendering until the Promise resolves, integrating seamlessly with React's Suspense for handling loading states.",
     codeUrl:
-      'https://stackblitz.com/edit/react-ts-use-hook?embed=1&file=index.tsx',
+      'https://codesandbox.io/p/sandbox/github/MSD118/react-19-demo?file=%2Fsrc%2FUse%2FUseContextDemo.tsx',
     features: [
       {
         title: 'Asynchronous Data Handling',
@@ -166,7 +166,7 @@ Seamless Error Management: Automatic error boundary triggering on Promise reject
     description:
       'Traditionally, ref callbacks in React were used to access DOM elements or component instances when they mount. With React 19, these callbacks can now return a cleanup function that React will invoke when the component unmounts. This approach aligns ref management with the familiar pattern of cleanup functions in useEffect hooks.',
     codeUrl:
-      'https://stackblitz.com/edit/react-ts-ref-cleanup?embed=1&file=index.tsx',
+      'https://codesandbox.io/p/sandbox/github/MSD118/react-19-demo?file=%2Fsrc%2FRefDemo%2FRefCleanUpDemo.tsx',
     benefits: [
       {
         title: 'Simplified Resource Management',
@@ -213,60 +213,61 @@ function ResizableComponent() {
 }
 `,
   },
-  {
-    title: 'useDeferredValue()',
-    description:
-      'The useDeferredValue hook allows you to defer updates to a value, enabling the UI to remain responsive by prioritizing more urgent updates. In React 19, an optional initialValue parameter has been introduced, which specifies the value to be used during the initial render. If initialValue is not provided, useDeferredValue will not defer during the initial render, as there is no previous value to display.',
-    codeUrl:
-      'https://stackblitz.com/edit/react-ts-use-deferred-value?embed=1&file=index.tsx',
-    benefits: [
-      {
-        title: 'Improved Performance',
-        description:
-          'By deferring less critical updates, the UI remains responsive, enhancing the user experience.',
-      },
-      {
-        title: 'Controlled Initial Render',
-        description:
-          'The initialValue parameter allows for a predictable initial state, reducing potential rendering issues.',
-      },
-      {
-        title: 'Simplified Code',
-        description:
-          ' Integrating useDeferredValue reduces the need for complex state management or debouncing logic.',
-      },
-    ],
-    newCode: `import { useState, useDeferredValue } from 'react';
+//   {
+//     title: 'useDeferredValue()',
+//     description:
+//       'The useDeferredValue hook allows you to defer updates to a value, enabling the UI to remain responsive by prioritizing more urgent updates. In React 19, an optional initialValue parameter has been introduced, which specifies the value to be used during the initial render. If initialValue is not provided, useDeferredValue will not defer during the initial render, as there is no previous value to display.',
+//     codeUrl:
+//       'https://stackblitz.com/edit/react-ts-use-deferred-value?embed=1&file=index.tsx',
+//     benefits: [
+//       {
+//         title: 'Improved Performance',
+//         description:
+//           'By deferring less critical updates, the UI remains responsive, enhancing the user experience.',
+//       },
+//       {
+//         title: 'Controlled Initial Render',
+//         description:
+//           'The initialValue parameter allows for a predictable initial state, reducing potential rendering issues.',
+//       },
+//       {
+//         title: 'Simplified Code',
+//         description:
+//           ' Integrating useDeferredValue reduces the need for complex state management or debouncing logic.',
+//       },
+//     ],
+//     newCode: `import { useState, useDeferredValue } from 'react';
 
-function SearchComponent() {
-  const [query, setQuery] = useState('');
-  const deferredQuery = useDeferredValue(query, '');
+// function SearchComponent() {
+//   const [query, setQuery] = useState('');
+//   const deferredQuery = useDeferredValue(query, '');
 
-  return (
-    <>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search..."
-      />
-      <SearchResults query={deferredQuery} />
-    </>
-  );
-}
+//   return (
+//     <>
+//       <input
+//         type="text"
+//         value={query}
+//         onChange={(e) => setQuery(e.target.value)}
+//         placeholder="Search..."
+//       />
+//       <SearchResults query={deferredQuery} />
+//     </>
+//   );
+// }
 
-function SearchResults({ query }) {
-  // Fetch and display results based on the query
-  // This could involve API calls or filtering a dataset
-}
-`,
-  },
+// function SearchResults({ query }) {
+//   // Fetch and display results based on the query
+//   // This could involve API calls or filtering a dataset
+// }
+// `,
+//   },
   {
     title: 'Support for Document Metadata',
     description:
       'Prior to React 19, incorporating document metadata required external libraries like react-helmet or manual DOM manipulations, which could be cumbersome and error-prone. With the introduction of native support, React now automatically hoists metadata tags defined within components to the <head> section of the HTML document during rendering. This ensures that metadata is accurately reflected without additional dependencies or complex setups.',
     codeUrl:
-      'https://stackblitz.com/edit/react-ts-document-metadata?embed=1&file=index.tsx',
+    'https://codesandbox.io/p/sandbox/github/MSD118/react-19-demo?file=%2Fsrc%2FMetaDataDemo.tsx',
+
     benefits: [
       {
         title: 'Simplified SEO Management',
@@ -308,7 +309,7 @@ function SearchResults({ query }) {
     description:
       'Prior to React 19, integrating Web Components required workarounds, such as using refs for property assignment and manually attaching event listeners. With the latest update, React now natively supports the rendering and interaction with Custom Elements, simplifying their usage within React components.',
     codeUrl:
-      'https://stackblitz.com/edit/react-ts-web-components?embed=1&file=index.tsx',
+    'https://codesandbox.io/p/sandbox/github/MSD118/react-19-demo?file=%2Fsrc%2FWebComponent%2FUseWebCompoentDemo.tsx',
     features: [
       {
         title: 'Automatic Property and Attribute Handling:',
