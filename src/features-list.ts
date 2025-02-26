@@ -85,7 +85,7 @@ export const REACT19_FEATURES: Feature[] = [
     description:
       'In React 19, <Context> can be rendered as a provider instead of <Context.Provider>',
     codeUrl:
-      'https://stackblitz.com/edit/react-ts-context-provider?embed=1&file=index.tsx',
+      'https://codesandbox.io/p/sandbox/github/MSD118/react-19-demo?file=%2Fsrc%2FContextAsProviderDemo.tsx',
     benefits: [
       {
         title: 'Simplified Syntax',
