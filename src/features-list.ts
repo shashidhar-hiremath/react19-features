@@ -366,5 +366,20 @@ export default App;
           'This update fosters better collaboration between different technologies and frameworks, allowing for the reuse of components across various projects.',
       },
     ],
-  },
+  },{
+    title: 'React Compiler (Beta)',
+    description: 'The React Compiler, introduced alongside React 19, is a build-time tool designed to automatically optimize your React applications by handling memoization and reducing unnecessary re-renders. This advancement aims to enhance performance and simplify the development process by minimizing the need for manual optimizations like useMemo, useCallback, or React.memo.',
+    codeUrl: 'https://react.dev/blog/2024/10/21/react-compiler-beta-release',
+    features: [{
+      title: 'Automatic Memoization',
+      description: 'The compiler analyzes your components and hooks to apply memoization where beneficial, ensuring that only components with changed inputs re-render. This approach reduces the cognitive load on developers, allowing them to focus more on building features than on performance tuning.'
+    },{
+      title: 'ESLint Integration',
+      description: 'An accompanying ESLint plugin helps identify violations of the "Rules of React," ensuring that your codebase adheres to best practices and is fully optimized by the compiler.'
+    },{
+      title: 'Backward Compatibility',
+      description: `While the compiler is designed to work seamlessly with React 19, it also supports applications running on React 17 and 18 through the react-compiler-runtime package. This flexibility allows a broader range of projects to benefit from the compiler's optimizations.`,
+    }],
+    newCode: `npm install -D babel-plugin-react-compiler@beta eslint-plugin-react-compiler@beta`,
+  }
 ];
