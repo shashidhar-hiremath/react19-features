@@ -88,23 +88,19 @@ export const REACT19_FEATURES: Feature[] = [
       'https://stackblitz.com/edit/react-ts-context-provider?embed=1&file=index.tsx',
     benefits: [
       {
-        title: 'Less Boilerplate',
+        title: 'Simplified Syntax',
         description:
-          'No need to wrap components with forwardRef, making code more concise.',
+          'The new syntax streamlines the declaration of context providers, reducing boilerplate code.',
       },
       {
-        title: 'More Readable Code',
+        title: 'Improved Readability',
         description:
-          'Ref handling looks more natural and is easier to understand.',
+          'By making the provider more explicit, the code becomes more readable and easier to understand.',
       },
       {
-        title: 'Improved Performance',
+        title: 'Consistent API',
         description:
-          'Removes the additional wrapper function, allowing React to optimize components better.',
-      },
-      {
-        title: 'Easier TypeScript Integration',
-        description: 'No need to use RefObject types manually with forwardRef',
+          'This change aligns the API for context providers with other React components, enhancing consistency across the library.',
       },
     ],
     oldCode: `<AuthContext.Provider value={user}>
