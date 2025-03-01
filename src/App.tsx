@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './App.css'
 import { ThemeContext } from './ThemeContext'
 import { REACT19_FEATURES } from './features-list'

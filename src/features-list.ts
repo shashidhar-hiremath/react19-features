@@ -1,13 +1,6 @@
 import { Feature } from './types';
 
 export const REACT19_FEATURES: Feature[] = [
-  // {
-  //     title: "React Compiler",
-  //     description: "React compiler will convert code in JavaScript making overall better app performance and think less about memorization.",
-  //     codeUrl: "https://stackblitz.com/edit/react-ts-compiler?embed=1&file=index.tsx",
-  //     benefits: [
-  //                ]
-  // },
   {
     title: '<form>',
     description: `React 19 introduces a new <form> feature for react-dom. Support for passing functions as the action and formAction props of <form>, <input>, and <button> elements to automatically submit forms with Actions. Actions can also be performed on server with 'use server'.`,
@@ -220,54 +213,6 @@ function ResizableComponent() {
 }
 `,
   },
-//   {
-//     title: 'useDeferredValue()',
-//     description:
-//       'The useDeferredValue hook allows you to defer updates to a value, enabling the UI to remain responsive by prioritizing more urgent updates. In React 19, an optional initialValue parameter has been introduced, which specifies the value to be used during the initial render. If initialValue is not provided, useDeferredValue will not defer during the initial render, as there is no previous value to display.',
-//     codeUrl:
-//       'https://stackblitz.com/edit/react-ts-use-deferred-value?embed=1&file=index.tsx',
-//     benefits: [
-//       {
-//         title: 'Improved Performance',
-//         description:
-//           'By deferring less critical updates, the UI remains responsive, enhancing the user experience.',
-//       },
-//       {
-//         title: 'Controlled Initial Render',
-//         description:
-//           'The initialValue parameter allows for a predictable initial state, reducing potential rendering issues.',
-//       },
-//       {
-//         title: 'Simplified Code',
-//         description:
-//           ' Integrating useDeferredValue reduces the need for complex state management or debouncing logic.',
-//       },
-//     ],
-//     newCode: `import { useState, useDeferredValue } from 'react';
-
-// function SearchComponent() {
-//   const [query, setQuery] = useState('');
-//   const deferredQuery = useDeferredValue(query, '');
-
-//   return (
-//     <>
-//       <input
-//         type="text"
-//         value={query}
-//         onChange={(e) => setQuery(e.target.value)}
-//         placeholder="Search..."
-//       />
-//       <SearchResults query={deferredQuery} />
-//     </>
-//   );
-// }
-
-// function SearchResults({ query }) {
-//   // Fetch and display results based on the query
-//   // This could involve API calls or filtering a dataset
-// }
-// `,
-//   },
   {
     title: 'Support for Document Metadata',
     description:
